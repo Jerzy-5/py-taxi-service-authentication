@@ -5,8 +5,9 @@
   <li><a href="{% url "taxi:driver-list" %}">Drivers</a></li>
 </ul>
 {% if user.is_authenticated %}
+    <ul>
     <li>
-      <a href="{% url 'taxi:driver-detail' user.driver.id %}">
+      <a href="{% url 'taxi:driver-detail' user.id %}">
         {{ user.username }}
       </a>
     </li>
@@ -16,6 +17,9 @@
         <button type="submit" style="background:none;border:none;padding:0;color:blue;cursor:pointer;">Logout</button>
       </form>
     </li>
+    </ul>
   {% else %}
+    <ul>
     <li><a href="{% url 'login' %}">Login</a></li>
+    </ul>
   {% endif %}
