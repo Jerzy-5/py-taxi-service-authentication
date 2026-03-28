@@ -6,7 +6,6 @@ from .views import (
     DriverListView,
     DriverDetailView,
     ManufacturerListView,
-    test_session_view
 )
 
 app_name = "taxi"
@@ -20,6 +19,5 @@ urlpatterns = [
     path("drivers/", DriverListView.as_view(), name="driver-list"),
     path("drivers/<int:pk>/", DriverDetailView.as_view(),
          name="driver-detail"),
-    path("test-session/", test_session_view, name="test-session"),
     path("accounts/", include("django.contrib.auth.urls")),
 ]
